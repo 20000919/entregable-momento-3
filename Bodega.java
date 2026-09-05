@@ -35,7 +35,7 @@ public class Bodega {
                         System.out.println("producto"+item);
                 }
                 break;
-                
+
                 case 2:
                   System.out.println("Ingrese el nombre del producto a buscar ");
                   String nombreBuscado = leer.nextLine();  
@@ -48,12 +48,35 @@ public class Bodega {
                   else{
                     System.out.println("El producto" + nombreBuscado + "No se encuentra en bodega");
                   }
+                  break;
 
-        
-            default:
+                  case 3:
+                    System.out.println("Ingrese el nombre del producto nuevo");
+                    String nuevo = leer.nextLine();
+                    boolean guardado = false;
+
+                    for(int i = 0; i < productos.length; ++i){
+                        if(productos[i] == null){
+                            productos[i] = nuevo;
+                            guardado = true;
+                            System.out.println("Producto guardado con exito");
+                            break;
+                        }
+                    }
+                    if(!guardado){
+                        System.out.println("No hay espacio en la bodega");
+                    }
+
+                    case 4:
+                    siExiste = false;
+                    System.out.println("Cerrando aplicacion");
+                    break;
+              
+                    default:System.out.println("Esta opcion no es valida");
                 break;
         }
         }
+        leer.close();
           
             
     
@@ -61,4 +84,11 @@ public class Bodega {
     }
 }
 
-public static Boolean buscarProducto(String[] arreglo String nombreBuscado)
+public static Boolean buscarProducto(String[] arreglo, String nombreBuscado){
+    for (String elemento: arreglo){
+        if (elemento != null && elemento.equalsIgnoreCase(nombreBuscado)){
+            return  true;
+        }
+    }
+    return false;
+}

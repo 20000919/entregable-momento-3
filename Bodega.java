@@ -19,8 +19,8 @@ public class Bodega {
         while (siExiste){
             System.out.println("BODEGA DE PRODUCTOS");
             System.out.println("Seleccione una opcion");
-            System.out.println("1 Buscar producto");
-            System.out.println("2 Listar producto");
+            System.out.println("1 Listar producto");
+            System.out.println("2 Buscar producto");
             System.out.println("3 Agregar producto");
             System.out.println("4 Salir");
             opcion = leer.nextInt();
